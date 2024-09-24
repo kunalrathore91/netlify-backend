@@ -1,0 +1,11 @@
+{
+  "name": "netlify-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "kunal rathore",
+  "license": "ISC"
+}
