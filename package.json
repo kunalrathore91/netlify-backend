@@ -2,11 +2,11 @@
   "name": "netlify-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "app.ts",
   "scripts": {
-    "dev": "nodemon ./src/index.ts",
+    "dev": "nodemon ./src/app.ts",
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
-    "start": "node dist/server.js",
+    "start": "node dist/src/api.js",
     "refine": "npx eslint . --fix",
     "test": "jest",
     "postinstall": "chmod +x node_modules/.bin/prisma && prisma generate"
