@@ -14,14 +14,14 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 
-// const corsOptions = {
-//     origin: 'http://localhost:5173',
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     credentials: true,
-//     optionsSuccessStatus: 200,
-// };
-app.use(cors());
-app.options('*', cors());
+const corsOptions = {
+    origin: 'https://prisma-ks.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use('/api/user', userRouter);
 app.use('/api/residency', residencyRouter);
