@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "build": "tsc ",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "start": "node dist/server.js",
     "refine": "npx eslint . --fix",
     "test": "jest",
@@ -14,19 +14,23 @@
   "author": "kunal rathore",
   "license": "ISC",
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@prisma/client": "^5.15.0",
     "@netlify/functions": "^2.8.1",
-    "@types/express": "^4.17.21",
+    "@prisma/client": "^5.15.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "prisma": "^5.15.0",
+    "express-oauth2-jwt-bearer": "^1.6.0",
+    "http-status-codes": "^2.3.0",
     "nodemon": "^3.1.7",
-    "ts-node-dev": "^2.0.0",
+    "prisma": "^5.15.0",
     "serverless-http": "^3.2.0"
   }
 }
