@@ -1,19 +1,13 @@
-import express from 'express'
+
+import { Router } from 'express'
+import userRouter from './routes/userRoute'
+import residencyRouter from './routes/residencyRoute'
 
 
-const app = express()
+const app = Router()
+
+app.use('/api/user', userRouter)
+app.use('/api/residency', residencyRouter)
 
 
-app.use(express.json())
-
-app.get('/',(req, res, next)=>{
-    return res.json({
-        message:"hello yo gesss...",
-        status:'2000'
-    })
-})
-
-app.listen(3000,()=>{
-    console.log('app running.....');
-    
-})
+export default app
