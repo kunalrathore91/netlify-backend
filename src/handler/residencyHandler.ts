@@ -47,7 +47,10 @@ export const getAllResidencies = async (req: Request, res: Response, next: NextF
                 country: 'desc',
             },
         });
-        res.status(StatusCodes.OK).send(residencies)
+        res.status(StatusCodes.OK).json({
+            residencies,
+            success: true
+        })
     } catch (error: any) {
         console.error(error);
         next(error);
